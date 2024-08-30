@@ -1,5 +1,9 @@
+import { TCell } from "../SudokuContext";
+
 export type CellProps = {
-    value: number;
-    posX: number;
-    posY: number;
-  };
+  cellSelected: TCell;
+  onPress: (_x: number, _y: number) => void;
+  posX: number;
+  posY: number;
+  value: number;
+};

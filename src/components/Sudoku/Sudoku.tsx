@@ -8,19 +8,22 @@ type IResponse = {
 };
 
 export default function Sudoku({ data }: { data: IResponse }) {
-  const { cellSelected } = useSudokuContext();
+  const { cellSelected, handleCellSelected } = useSudokuContext();
 
   return (
-    <>
-      <p>{cellSelected?.x}</p>
-      <p>{cellSelected?.y}</p>
-      <div className={styles.container}>
-        {data.unsolved.map((row, i) =>
-          row.map((cell, j) => (
-            <Cell key={i + j + "-cell"} value={cell} posX={i} posY={j} />
-          ))
-        )}
-      </div>
-    </>
+    <div className={styles.container} role="grid" aria-label="Sudoku Board">
+      {data.unsolved.map((row, x) =>
+        row.map((cell, y) => (
+          <Cell
+            key={x + y + "-cell"}
+            value={cell}
+            posX={x}
+            posY={y}
+            onPress={handleCellSelected}
+            cellSelected={cellSelected}
+          />
+        ))
+      )}
+    </div>
   );
 }

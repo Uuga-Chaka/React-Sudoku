@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import styles from "./App.module.css";
-import { NumberSelector } from "./components/Sudoku/NumberSelector/NumberSelector";
+import { NumberSelector } from "./components/NumberSelector/NumberSelector";
 import Sudoku from "./components/Sudoku/Sudoku";
 import { SudokuContextProvider } from "./components/Sudoku/SudokuContext";
 import { apiUrl } from "./contants";

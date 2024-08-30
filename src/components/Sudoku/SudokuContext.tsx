@@ -6,7 +6,7 @@ import {
   useState,
 } from "react";
 
-type TCell = { x: number; y: number } | undefined;
+export type TCell = { x: number; y: number } | undefined;
 type TContextValue = {
   board: number[][];
   handleBoard: (value: number) => void;

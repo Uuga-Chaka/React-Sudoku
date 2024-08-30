@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-import { useSudokuContext } from "../useSudokuContext";
 import style from "./Cell.module.css";
 import { CellProps } from "./Cell.types";
 
@@ -9,9 +8,14 @@ const defineStyles = (x: number, y: number) => {
     : style.bggrey;
 };
 
-export const Cell = ({ value, posX, posY }: CellProps) => {
+export const Cell = ({
+  value,
+  posX,
+  posY,
+  onPress,
+  cellSelected,
+}: CellProps) => {
   const backgroundColor = useMemo(() => defineStyles(posX, posY), [posX, posY]);
-  const { handleCellSelected, cellSelected } = useSudokuContext();
 
   const selectedStyle = useMemo(() => {
     if (cellSelected?.x === posX && cellSelected?.y === posY) {
@@ -22,8 +26,9 @@ export const Cell = ({ value, posX, posY }: CellProps) => {
 
   return (
     <div
+      role="gridcell"
       className={`${style.container} ${backgroundColor} ${selectedStyle}`}
-      onClick={() => handleCellSelected(posX, posY)}
+      onClick={() => onPress(posX, posY)}
     >
       <p>{value || null}</p>
     </div>
