@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import styles from "./App.module.css";
 import { NumberSelector } from "./components/Sudoku/NumberSelector/NumberSelector";
 import Sudoku from "./components/Sudoku/Sudoku";
+import { SudokuContextProvider } from "./components/Sudoku/SudokuContext";
 import { apiUrl } from "./contants";
 
 type IResponse = {
@@ -23,11 +24,13 @@ function App() {
   if (error) return "An error has occurred: " + error.message;
 
   return (
-    <div className={styles.appContainer}>
-      <Sudoku data={data} />
-      <div>{isFetching ? "Updating..." : ""}</div>
-      <NumberSelector />
-    </div>
+    <SudokuContextProvider>
+      <div className={styles.appContainer}>
+        <Sudoku data={data} />
+        <div>{isFetching ? "Updating..." : ""}</div>
+        <NumberSelector />
+      </div>
+    </SudokuContextProvider>
   );
 }
 
