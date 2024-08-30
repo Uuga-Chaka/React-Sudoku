@@ -11,17 +11,16 @@
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   grid-template-rows: repeat(9, 1fr);
-  border: 1px solid black;
   border-radius: 6px;
-  overflow: hidden;
+  z-index: 9999;
 }
 
 .container>div:nth-child(9n -8) {
-  border-left: none !important;
+  border-left: 1px solid #c3cbf4;
 }
 
 .container>div:nth-child(-n+9) {
-  border-top: none !important;
+  border-top: 1px solid #c3cbf4;
 }
 
 .row {
