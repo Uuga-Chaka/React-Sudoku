@@ -1,4 +1,4 @@
-import { TCell } from "../SudokuContext";
+import { TCell } from "../Sudoku.types";
 
 export type CellProps = {
   cellSelected: TCell;

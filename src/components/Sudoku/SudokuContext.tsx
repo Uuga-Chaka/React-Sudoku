@@ -1,20 +1,5 @@
-import {
-  createContext,
-  ReactNode,
-  useCallback,
-  useMemo,
-  useState,
-} from "react";
-
-export type TCell = { x: number; y: number } | undefined;
-type TContextValue = {
-  board: number[][];
-  handleBoard: (value: number) => void;
-  handleCellSelected: (_x: number, _y: number) => void;
-  cellSelected: TCell;
-};
-
-type SudokuProviderProps = { children: ReactNode };
+import { createContext, useCallback, useMemo, useState } from "react";
+import { SudokuProviderProps, TCell, TContextValue } from "./Sudoku.types";
 
 const defaultValue: TContextValue = {
   board: Array.from({ length: 9 }, () => Array(9).fill(0)),
@@ -25,15 +10,19 @@ const defaultValue: TContextValue = {
 
 export const SudokuContext = createContext<TContextValue>(defaultValue);
 
-export const SudokuContextProvider = ({ children }: SudokuProviderProps) => {
+export const SudokuContextProvider = ({
+  children,
+  initialBoard,
+}: SudokuProviderProps) => {
   const [board, setBoard] = useState<number[][]>(defaultValue.board);
   const [cellSelected, setCellSelected] = useState<TCell>();
 
   const handleBoard = useCallback(
     (value: number) => {
       if (!cellSelected) return;
-
       const { x, y } = cellSelected;
+
+      if (!initialBoard[x][y]) return;
 
       setBoard((board) => {
         const newBoard = [...board];
@@ -43,13 +32,16 @@ export const SudokuContextProvider = ({ children }: SudokuProviderProps) => {
         return newBoard;
       });
     },
-    [cellSelected]
+    [cellSelected, initialBoard]
   );
 
-  const handleCellSelected = useCallback((_x: number, _y: number) => {
-    console.log("GO!")
-    setCellSelected({ x: _x, y: _y });
-  }, []);
+  const handleCellSelected = useCallback(
+    (_x: number, _y: number) => {
+      if (initialBoard[_x][_y] !== 0) return;
+      setCellSelected({ x: _x, y: _y });
+    },
+    [initialBoard]
+  );
 
   const value = useMemo(
     () => ({ board, handleBoard, handleCellSelected, cellSelected }),
