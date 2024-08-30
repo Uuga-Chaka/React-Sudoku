@@ -16,11 +16,11 @@
 }
 
 .container>div:nth-child(9n -8) {
-  border-left: 1px solid #c3cbf4;
+  border-left: 1px solid var(--board-border-color);
 }
 
 .container>div:nth-child(-n+9) {
-  border-top: 1px solid #c3cbf4;
+  border-top: 1px solid var(--board-border-color);
 }
 
 .row {

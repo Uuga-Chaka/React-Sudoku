@@ -7,8 +7,9 @@
 .number {
   padding: 10px;
   text-align: center;
-  border: 1px solid #000;
+  border: 1px solid var(--board-border-color);
   border-radius: 4px;
-  background-color: #fff;
+  background-color: var(--board-bg-light);
+  color: var(--board-text-color);
   cursor: pointer;
 }

@@ -7,24 +7,24 @@
     border-bottom: 1px solid;
     border-right: 1px solid;
     box-sizing: border-box;
-    border-color: #c3cbf4;
+    border-color: var(--board-border-color);
 }
 
 .container>p {
-    color: #3f4c91;
+    color: var(--board-text-color);
     user-select: none;
 }
 
 .bggrey {
-    background-color: rgb(221, 242, 255);
+    background-color: var(--board-bg-dark);
 }
 
 .bgwhite {
-    background-color: rgb(255, 255, 255);
+    background-color: var(--board-bg-light);
 }
 
 .selected {
-    background-color: rgb(106, 210, 210);
+    background-color: var(--cell-selected-bg);
     transition: all .5s;
     transform: scale(1.1);
     border-radius: 4px;

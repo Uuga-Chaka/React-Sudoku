@@ -11,3 +11,11 @@ body {
     font-weight: 500;
     font-style: normal;
 }
+
+:root {
+    --board-border-color: #c3cbf4;
+    --board-bg-light: rgb(255, 255, 255);
+    --board-bg-dark: rgb(221, 242, 255);
+    --board-text-color: #3f4c91;
+    --cell-selected-bg: rgb(106, 210, 210);
+}
