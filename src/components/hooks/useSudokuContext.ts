@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { SudokuContext } from "./SudokuContext";
+import { SudokuContext } from "../Sudoku/SudokuContext";
 
 export const useSudokuContext = () => {
   const {
