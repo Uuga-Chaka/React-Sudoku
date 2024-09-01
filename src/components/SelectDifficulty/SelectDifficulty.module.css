@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    gap: 10px;
+    margin: 10px auto;
+}
+
+.text {
+    padding: 5px 10px;
+    text-align: center;
+    border: 1px solid var(--board-border-color);
+    border-radius: 4px;
+    background-color: var(--board-bg-light);
+    color: var(--board-text-color);
+    cursor: pointer;
+}
+
+.selected {
+    background-color: var(--board-bg-dark);
+}

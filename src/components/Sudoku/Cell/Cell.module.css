@@ -15,11 +15,11 @@
 }
 
 .fixed {
-    color: var(--board-text-fix);
+    color: var(--board-text-color);
 }
 
 .nofixed {
-    color: var(--board-text-color);
+    color: var(--board-text-fix);
 }
 
 .bggrey {
