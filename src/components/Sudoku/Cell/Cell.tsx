@@ -14,8 +14,11 @@ export const Cell = ({
   posY,
   onPress,
   cellSelected,
+  initialBoard,
 }: CellProps) => {
   const backgroundColor = useMemo(() => defineStyles(posX, posY), [posX, posY]);
+
+  const isCellFixed = !!initialBoard[posX][posY];
 
   const selectedStyle = useMemo(() => {
     if (cellSelected?.x === posX && cellSelected?.y === posY) {
@@ -24,13 +27,21 @@ export const Cell = ({
     return "";
   }, [cellSelected, posX, posY]);
 
+  const handlePress = () => {
+    onPress(posX, posY);
+  };
+
   return (
     <div
       role="gridcell"
       className={`${style.container} ${backgroundColor} ${selectedStyle}`}
-      onClick={() => onPress(posX, posY)}
+      onClick={handlePress}
     >
-      <p>{value || null}</p>
+      {isCellFixed ? (
+        <p className={style.fixed}>{initialBoard[posX][posY]}</p>
+      ) : (
+        <p className={style.nofixed}> {value || null} </p>
+      )}
     </div>
   );
 };

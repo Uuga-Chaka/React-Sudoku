@@ -6,4 +6,5 @@ export type CellProps = {
   posX: number;
   posY: number;
   value: number;
+  initialBoard: number[][];
 };

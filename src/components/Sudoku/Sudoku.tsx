@@ -8,19 +8,20 @@ type IResponse = {
 };
 
 export default function Sudoku({ data }: { data: IResponse }) {
-  const { cellSelected, handleCellSelected } = useSudokuContext();
+  const { cellSelected, handleCellSelected, board } = useSudokuContext();
 
   return (
     <div className={styles.container} role="grid" aria-label="Sudoku Board">
-      {data.unsolved.map((row, x) =>
+      {board.map((row, x) =>
         row.map((cell, y) => (
           <Cell
-            key={x + y + "-cell"}
+            key={"cell-" + x + y}
             value={cell}
             posX={x}
             posY={y}
             onPress={handleCellSelected}
             cellSelected={cellSelected}
+            initialBoard={data.unsolved}
           />
         ))
       )}
