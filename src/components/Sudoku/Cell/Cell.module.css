@@ -11,8 +11,15 @@
 }
 
 .container>p {
-    color: var(--board-text-color);
     user-select: none;
+}
+
+.fixed {
+    color: var(--board-text-fix);
+}
+
+.nofixed {
+    color: var(--board-text-color);
 }
 
 .bggrey {

@@ -1,7 +1,7 @@
 .container {
   display: flex;
   gap: 10px;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
 .number {
@@ -12,4 +12,8 @@
   background-color: var(--board-bg-light);
   color: var(--board-text-color);
   cursor: pointer;
+}
+
+.selected {
+  background-color: var(--board-bg-dark);
 }

@@ -15,12 +15,24 @@
   z-index: 9999;
 }
 
+/* board borders */
 .container>div:nth-child(9n -8) {
   border-left: 1px solid var(--board-border-color);
 }
-
 .container>div:nth-child(-n+9) {
   border-top: 1px solid var(--board-border-color);
+}
+.container>div:nth-child(1) {
+  border-top-left-radius: var(--board-border-radius);
+}
+.container>div:nth-child(9) {
+  border-top-right-radius: var(--board-border-radius);
+}
+.container>div:nth-child(73) {
+  border-bottom-left-radius: var(--board-border-radius);
+}
+.container>div:nth-child(81) {
+  border-bottom-right-radius: var(--board-border-radius);
 }
 
 .row {
