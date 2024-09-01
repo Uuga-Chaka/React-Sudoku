@@ -1,4 +1,4 @@
-import { useSudokuContext } from "../Sudoku/useSudokuContext";
+import { useSudokuContext } from "../hooks/useSudokuContext";
 import styles from "./NumberSelector.module.css";
 
 export const NumberSelector = () => {

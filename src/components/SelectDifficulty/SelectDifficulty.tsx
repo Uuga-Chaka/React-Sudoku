@@ -1,10 +1,11 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { apiUrl } from "../../contants";
-import { useSudokuContext } from "../Sudoku/useSudokuContext";
+import { useSudokuContext } from "../hooks/useSudokuContext";
 
 import { useState } from "react";
 import style from "./SelectDifficulty.module.css";
 
+//TODO: move to models file
 type IResponse = {
   option: string;
   value: string;

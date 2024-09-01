@@ -4,7 +4,7 @@ import styles from "./App.module.css";
 import { NumberSelector } from "./components/NumberSelector/NumberSelector";
 import SelectDifficulty from "./components/SelectDifficulty/SelectDifficulty";
 import Sudoku from "./components/Sudoku/Sudoku";
-import { useSudokuContext } from "./components/Sudoku/useSudokuContext";
+import { useSudokuContext } from "./components/hooks/useSudokuContext";
 import { apiUrl } from "./contants";
 
 type IResponse = {

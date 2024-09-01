@@ -1,6 +1,6 @@
+import { useSudokuContext } from "../hooks/useSudokuContext";
 import { Cell } from "./Cell/Cell";
 import styles from "./Sudoku.module.css";
-import { useSudokuContext } from "./useSudokuContext";
 
 type IResponse = {
   solved: number[][];
